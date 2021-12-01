@@ -1,0 +1,26 @@
+modLoader="javafml"
+loaderVersion="[38,)"
+license="MIT License https://github.com/bl4ckscor3/FrozenRetreat/blob/1.18/LICENSE"
+issueTrackerURL="https://github.com/bl4ckscor3/FrozenRetreat/issues"
+
+[[mods]] 
+	modId="frozenretreat"
+	version="${file.jarVersion}"
+	displayName="Frozen Retreat"
+	displayURL="https://www.curseforge.com/minecraft/mc-mods/frozen-retreat"
+	authors="bl4ckscor3, ChainmailPickaxe, Redstone_Dubstep"
+	description=''''''
+
+[[dependencies.frozenretreat]]
+	modId="forge"
+	mandatory=true
+	versionRange="[38,)"
+	ordering="NONE"
+	side="BOTH"
+
+[[dependencies.frozenretreat]]
+	modId="minecraft"
+	mandatory=true
+	versionRange="[1.18,1.19)"
+	ordering="NONE"
+	side="BOTH"
