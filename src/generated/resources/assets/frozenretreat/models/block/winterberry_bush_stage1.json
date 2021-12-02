@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "frozenretreat:block/winterberry_bush_stage1"
+  }
+}
