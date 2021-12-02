@@ -1,5 +1,6 @@
 package frozenretreat;
 
+import frozenretreat.registration.FRBiomes;
 import frozenretreat.registration.FRBlocks;
 import frozenretreat.registration.FRItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -21,6 +22,7 @@ public class FrozenRetreat {
 	public FrozenRetreat() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		FRBiomes.BIOMES.register(modEventBus);
 		FRBlocks.BLOCKS.register(modEventBus);
 		FRItems.ITEMS.register(modEventBus);
 	}
