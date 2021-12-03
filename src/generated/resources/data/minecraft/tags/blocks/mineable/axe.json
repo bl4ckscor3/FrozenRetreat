@@ -1,6 +1,17 @@
 {
   "replace": false,
   "values": [
-    "#frozenretreat:frostwood_logs"
+    "#frozenretreat:frostwood_logs",
+    "frozenretreat:frostwood_planks",
+    "frozenretreat:frostwood_slab",
+    "frozenretreat:frostwood_stairs",
+    "frozenretreat:frostwood_fence",
+    "frozenretreat:frostwood_sign",
+    "frozenretreat:frostwood_wall_sign",
+    "frozenretreat:frostwood_button",
+    "frozenretreat:frostwood_pressure_plate",
+    "frozenretreat:frostwood_door",
+    "frozenretreat:frostwood_trapdoor",
+    "frozenretreat:frostwood_fence_gate"
   ]
 }

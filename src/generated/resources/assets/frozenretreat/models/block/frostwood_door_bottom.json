@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom",
+  "textures": {
+    "bottom": "frozenretreat:block/frostwood_door_bottom",
+    "top": "frozenretreat:block/frostwood_door_top"
+  }
+}

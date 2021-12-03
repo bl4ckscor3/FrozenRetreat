@@ -1,8 +1,18 @@
 {
+	"block.frozenretreat.frostwood_planks": "Frostholzbretter",
 	"block.frozenretreat.frostwood_log": "Frostholzstamm",
 	"block.frozenretreat.stripped_frostwood_log": "Entrindeter Frostholzstamm",
 	"block.frozenretreat.frostwood": "Frostholz",
 	"block.frozenretreat.stripped_frostwood": "Entrindetes Frostholz",
+	"block.frozenretreat.frostwood_slab": "Frostholzstufe",
+	"block.frozenretreat.frostwood_stairs": "Frostholztreppe",
+	"block.frozenretreat.frostwood_fence": "Frostholzzaun",
+	"block.frozenretreat.frostwood_sign": "Frostholzschild",
+	"block.frozenretreat.frostwood_button": "Frostholzknopf",
+	"block.frozenretreat.frostwood_pressure_plate": "Frostholzdruckplatte",
+	"block.frozenretreat.frostwood_door": "Frostholztür",
+	"block.frozenretreat.frostwood_trapdoor": "Frostholzfalltür",
+	"block.frozenretreat.frostwood_fence_gate": "Frostholzzauntor",
 
 	"item.frozenretreat.winterberries": "Rote Winterbeeren"
 }

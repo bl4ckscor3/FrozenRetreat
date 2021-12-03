@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button_inventory",
+  "textures": {
+    "texture": "frozenretreat:block/frostwood_planks"
+  }
+}

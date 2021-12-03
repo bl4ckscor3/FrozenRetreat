@@ -27,6 +27,10 @@ public class ItemModelGenerator extends ItemModelProvider {
 		}
 
 		flatItem(FRItems.WINTERBERRIES.get());
+		flatItem(FRItems.FROSTWOOD_SIGN.get());
+		getBuilder(FRBlocks.FROSTWOOD_BUTTON.get().getRegistryName().getPath()).parent(new UncheckedModelFile(modLoc(BLOCK_FOLDER + "/frostwood_button_inventory")));
+		getBuilder(FRBlocks.FROSTWOOD_FENCE.get().getRegistryName().getPath()).parent(new UncheckedModelFile(modLoc(BLOCK_FOLDER + "/frostwood_fence_inventory")));
+		getBuilder(FRBlocks.FROSTWOOD_TRAPDOOR.get().getRegistryName().getPath()).parent(new UncheckedModelFile(modLoc(BLOCK_FOLDER + "/frostwood_trapdoor_bottom")));
 	}
 
 	private ItemModelBuilder flatItem(Item item) {
@@ -36,6 +40,7 @@ public class ItemModelGenerator extends ItemModelProvider {
 	}
 
 	private void simpleParent(Item item) {
+
 		String name = item.getRegistryName().getPath();
 
 		getBuilder(name).parent(new UncheckedModelFile(modLoc(BLOCK_FOLDER + "/" + name)));

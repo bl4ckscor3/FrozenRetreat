@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "frozenretreat:block/frostwood_planks",
+    "bottom": "frozenretreat:block/frostwood_planks",
+    "top": "frozenretreat:block/frostwood_planks"
+  }
+}

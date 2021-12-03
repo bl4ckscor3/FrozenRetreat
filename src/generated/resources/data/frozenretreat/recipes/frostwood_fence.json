@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "W#W",
+    "W#W"
+  ],
+  "key": {
+    "W": {
+      "item": "frozenretreat:frostwood_planks"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "frozenretreat:frostwood_fence",
+    "count": 3
+  }
+}

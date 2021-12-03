@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "frozenretreat:block/frostwood_slab_top"
+    },
+    "type=bottom": {
+      "model": "frozenretreat:block/frostwood_slab"
+    },
+    "type=double": {
+      "model": "frozenretreat:block/frostwood_planks"
+    }
+  }
+}

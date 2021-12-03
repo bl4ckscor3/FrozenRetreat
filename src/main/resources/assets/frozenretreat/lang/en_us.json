@@ -1,8 +1,18 @@
 {
+	"block.frozenretreat.frostwood_planks": "Frostwood Planks",
 	"block.frozenretreat.frostwood_log": "Frostwood Log",
 	"block.frozenretreat.stripped_frostwood_log": "Stripped Frostwood Log",
 	"block.frozenretreat.frostwood": "Frostwood",
 	"block.frozenretreat.stripped_frostwood": "Stripped Frostwood",
+	"block.frozenretreat.frostwood_slab": "Frostwood Slab",
+	"block.frozenretreat.frostwood_stairs": "Frostwood Stairs",
+	"block.frozenretreat.frostwood_fence": "Frostwood Fence",
+	"block.frozenretreat.frostwood_sign": "Frostwood Sign",
+	"block.frozenretreat.frostwood_button": "Frostwood Button",
+	"block.frozenretreat.frostwood_pressure_plate": "Frostwood Pressure Plate",
+	"block.frozenretreat.frostwood_door": "Frostwood Door",
+	"block.frozenretreat.frostwood_trapdoor": "Frostwood Trapdoor",
+	"block.frozenretreat.frostwood_fence_gate": "Frostwood Fence Gate",
 
 	"item.frozenretreat.winterberries": "Winterberries",
 

@@ -1,6 +1,7 @@
 package frozenretreat;
 
 import frozenretreat.registration.FRBiomes;
+import frozenretreat.registration.FRBlockEntityTypes;
 import frozenretreat.registration.FRBlocks;
 import frozenretreat.registration.FRItems;
 import net.minecraft.world.item.CreativeModeTab;
@@ -24,6 +25,7 @@ public class FrozenRetreat {
 
 		FRBiomes.BIOMES.register(modEventBus);
 		FRBlocks.BLOCKS.register(modEventBus);
+		FRBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
 		FRItems.ITEMS.register(modEventBus);
 	}
 }

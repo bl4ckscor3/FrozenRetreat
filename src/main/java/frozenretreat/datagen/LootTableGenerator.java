@@ -15,6 +15,7 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.HashCache;
+import net.minecraft.data.loot.BlockLoot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
@@ -43,6 +44,7 @@ public class LootTableGenerator implements DataProvider {
 	private Map<ResourceLocation, LootTable.Builder> generateBlockLootTables() {
 		Map<ResourceLocation, LootTable.Builder> lootTables = new HashMap<>();
 		Block winterberryBush = FRBlocks.WINTERBERRY_BUSH.get();
+		Block frostwoodDoor = FRBlocks.FROSTWOOD_DOOR.get();
 
 		for(RegistryObject<Block> ro : FRBlocks.BLOCKS.getEntries()) {
 			Block block = ro.get();
@@ -51,6 +53,8 @@ public class LootTableGenerator implements DataProvider {
 				lootTables.put(block.getLootTable(), createStandardBlockLootTable(block));
 		}
 
+		lootTables.put(frostwoodDoor.getLootTable(), BlockLoot.createDoorTable(frostwoodDoor));
+		lootTables.put(FRBlocks.FROSTWOOD_SIGN.get().getLootTable(), createStandardBlockLootTable(FRItems.FROSTWOOD_SIGN.get()));
 		lootTables.put(winterberryBush.getLootTable(), LootTable.lootTable()
 				.withPool(LootPool.lootPool()
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(winterberryBush)

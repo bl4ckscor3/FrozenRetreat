@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "frozenretreat:block/frostwood_pressure_plate"
+    },
+    "powered=true": {
+      "model": "frozenretreat:block/frostwood_pressure_plate_down"
+    }
+  }
+}
