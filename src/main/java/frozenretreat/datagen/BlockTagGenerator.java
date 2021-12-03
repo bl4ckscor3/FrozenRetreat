@@ -21,6 +21,8 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				FRBlocks.FROSTWOOD.get(),
 				FRBlocks.STRIPPED_FROSTWOOD.get());
 		tag(BlockTags.MINEABLE_WITH_AXE).addTag(FRTags.Blocks.FROSTWOOD_LOGS);
+		tag(BlockTags.LOGS).addTag(FRTags.Blocks.FROSTWOOD_LOGS);
+		tag(BlockTags.LOGS_THAT_BURN).addTag(FRTags.Blocks.FROSTWOOD_LOGS);
 	}
 
 	@Override

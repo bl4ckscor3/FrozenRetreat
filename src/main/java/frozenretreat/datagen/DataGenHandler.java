@@ -23,5 +23,6 @@ public class DataGenHandler {
 		generator.addProvider(new ItemModelGenerator(generator, existingFileHelper));
 		generator.addProvider(new ItemTagGenerator(generator, blockTagGenerator, existingFileHelper));
 		generator.addProvider(new LootTableGenerator(generator));
+		generator.addProvider(new RecipeGenerator(generator));
 	}
 }
