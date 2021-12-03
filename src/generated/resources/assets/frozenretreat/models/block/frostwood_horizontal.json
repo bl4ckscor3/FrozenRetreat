@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "side": "frozenretreat:block/frostwood_log",
+    "end": "frozenretreat:block/frostwood_log"
+  }
+}

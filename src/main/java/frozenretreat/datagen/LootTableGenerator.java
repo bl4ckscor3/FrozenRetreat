@@ -30,6 +30,7 @@ import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
+import net.minecraftforge.registries.RegistryObject;
 
 public class LootTableGenerator implements DataProvider {
 	private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
@@ -42,6 +43,13 @@ public class LootTableGenerator implements DataProvider {
 	private Map<ResourceLocation, LootTable.Builder> generateBlockLootTables() {
 		Map<ResourceLocation, LootTable.Builder> lootTables = new HashMap<>();
 		Block winterberryBush = FRBlocks.WINTERBERRY_BUSH.get();
+
+		for(RegistryObject<Block> ro : FRBlocks.BLOCKS.getEntries()) {
+			Block block = ro.get();
+
+			if(block != winterberryBush)
+				lootTables.put(block.getLootTable(), createStandardBlockLootTable(block));
+		}
 
 		lootTables.put(winterberryBush.getLootTable(), LootTable.lootTable()
 				.withPool(LootPool.lootPool()

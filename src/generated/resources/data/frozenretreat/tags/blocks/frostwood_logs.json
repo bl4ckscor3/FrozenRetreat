@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "frozenretreat:frostwood_log",
+    "frozenretreat:stripped_frostwood_log",
+    "frozenretreat:frostwood",
+    "frozenretreat:stripped_frostwood"
+  ]
+}

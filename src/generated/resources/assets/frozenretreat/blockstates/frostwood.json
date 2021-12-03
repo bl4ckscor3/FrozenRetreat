@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "frozenretreat:block/frostwood_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "frozenretreat:block/frostwood"
+    },
+    "axis=z": {
+      "model": "frozenretreat:block/frostwood_horizontal",
+      "x": 90
+    }
+  }
+}
