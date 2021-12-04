@@ -23,7 +23,7 @@ public class FrozenRetreat {
 	public FrozenRetreat() {
 		IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-		FRBiomes.BIOMES.register(modEventBus);
+		//FRBiomes.BIOMES.register(modEventBus);
 		FRBlocks.BLOCKS.register(modEventBus);
 		FRBlockEntityTypes.BLOCK_ENTITY_TYPES.register(modEventBus);
 		FRItems.ITEMS.register(modEventBus);
