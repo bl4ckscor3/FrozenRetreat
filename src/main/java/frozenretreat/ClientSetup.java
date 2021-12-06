@@ -2,7 +2,9 @@ package frozenretreat;
 
 import frozenretreat.registration.FRBlockEntityTypes;
 import frozenretreat.registration.FRBlocks;
+import frozenretreat.registration.FREntityTypes;
 import frozenretreat.registration.FRWoodTypes;
+import frozenretreat.renderer.FrozenBoatRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
@@ -24,6 +26,7 @@ public class ClientSetup {
 
 	@SubscribeEvent
 	public static void onRegisterEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
+		event.registerEntityRenderer(FREntityTypes.FROSTWOOD_BOAT.get(), FrozenBoatRenderer::new);
 		event.registerBlockEntityRenderer(FRBlockEntityTypes.FROSTWOOD_SIGN.get(), SignRenderer::new);
 	}
 }
