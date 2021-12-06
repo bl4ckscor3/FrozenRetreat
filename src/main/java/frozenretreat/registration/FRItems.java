@@ -25,7 +25,7 @@ public class FRItems {
 	public static final RegistryObject<WinterberriesItem> WINTERBERRIES = ITEMS.register("winterberries", () -> new WinterberriesItem(FRBlocks.WINTERBERRY_BUSH.get(), prop().food(FRFood.WINTERBERRIES)));
 	public static final RegistryObject<SignItem> FROSTWOOD_SIGN = ITEMS.register("frostwood_sign", () -> new SignItem(prop(), FRBlocks.FROSTWOOD_SIGN.get(), FRBlocks.FROSTWOOD_WALL_SIGN.get()));
 	public static final RegistryObject<DoubleHighBlockItem> FROSTWOOD_DOOR = ITEMS.register("frostwood_door", () -> new DoubleHighBlockItem(FRBlocks.FROSTWOOD_DOOR.get(), prop()));
-	public static final RegistryObject<FrostwoodBoatItem> FROSTWOOD_BOAT = ITEMS.register("oak_boat", () -> new FrostwoodBoatItem(new Item.Properties().stacksTo(1).tab(FrozenRetreat.TAB)));
+	public static final RegistryObject<FrostwoodBoatItem> FROSTWOOD_BOAT = ITEMS.register("frostwood_boat", () -> new FrostwoodBoatItem(new Item.Properties().stacksTo(1).tab(FrozenRetreat.TAB)));
 
 	@SubscribeEvent
 	public static void onRegisterItems(RegistryEvent.Register<Item> event) {

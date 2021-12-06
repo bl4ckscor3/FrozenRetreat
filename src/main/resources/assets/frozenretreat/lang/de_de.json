@@ -14,5 +14,8 @@
 	"block.frozenretreat.frostwood_trapdoor": "Frostholzfalltür",
 	"block.frozenretreat.frostwood_fence_gate": "Frostholzzauntor",
 
-	"item.frozenretreat.winterberries": "Rote Winterbeeren"
+	"item.frozenretreat.winterberries": "Rote Winterbeeren",
+	"item.frozenretreat.frostwood_boat": "Frostholzboot",
+
+	"entity.frozenretreat.frostwood_boat": "Frostholzboot"
 }

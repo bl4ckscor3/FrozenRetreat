@@ -15,6 +15,9 @@
 	"block.frozenretreat.frostwood_fence_gate": "Frostwood Fence Gate",
 
 	"item.frozenretreat.winterberries": "Winterberries",
+	"item.frozenretreat.frostwood_boat": "Frostwood Boat",
+
+	"entity.frozenretreat.frostwood_boat": "Frostwood Boat",
 
 	"itemGroup.frozenretreat": "Frozen Retreat"
 }

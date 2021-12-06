@@ -1,5 +1,6 @@
 package frozenretreat.entity;
 
+import frozenretreat.registration.FREntityTypes;
 import frozenretreat.registration.FRItems;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.vehicle.Boat;
@@ -12,7 +13,11 @@ public class FrostwoodBoat extends Boat {
 	}
 
 	public FrostwoodBoat(Level level, double x, double y, double z) {
-		super(level, x, y, z);
+		this(FREntityTypes.FROSTWOOD_BOAT.get(), level);
+		setPos(x, y, z);
+		this.xo = x;
+		this.yo = y;
+		this.zo = z;
 	}
 
 	@Override
