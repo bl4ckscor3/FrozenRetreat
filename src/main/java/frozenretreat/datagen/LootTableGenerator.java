@@ -46,10 +46,10 @@ public class LootTableGenerator implements DataProvider {
 		Block winterberryBush = FRBlocks.WINTERBERRY_BUSH.get();
 		Block frostwoodDoor = FRBlocks.FROSTWOOD_DOOR.get();
 
-		for(RegistryObject<Block> ro : FRBlocks.BLOCKS.getEntries()) {
+		for (RegistryObject<Block> ro : FRBlocks.BLOCKS.getEntries()) {
 			Block block = ro.get();
 
-			if(block != winterberryBush)
+			if (block != winterberryBush)
 				lootTables.put(block.getLootTable(), createStandardBlockLootTable(block));
 		}
 
@@ -74,8 +74,7 @@ public class LootTableGenerator implements DataProvider {
 		return lootTables;
 	}
 
-	private final LootTable.Builder createStandardBlockLootTable(ItemLike drop)
-	{
+	private final LootTable.Builder createStandardBlockLootTable(ItemLike drop) {
 		return LootTable.lootTable()
 				.withPool(LootPool.lootPool()
 						.setRolls(ConstantValue.exactly(1.0F))
@@ -92,7 +91,7 @@ public class LootTableGenerator implements DataProvider {
 			try {
 				DataProvider.save(GSON, cache, LootTables.serialize(lootTable), generator.getOutputFolder().resolve("data/" + key.getNamespace() + "/loot_tables/" + key.getPath() + ".json"));
 			}
-			catch(IOException e) {
+			catch (IOException e) {
 				e.printStackTrace();
 			}
 		});

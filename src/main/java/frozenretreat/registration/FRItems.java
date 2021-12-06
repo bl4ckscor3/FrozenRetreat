@@ -29,10 +29,10 @@ public class FRItems {
 
 	@SubscribeEvent
 	public static void onRegisterItems(RegistryEvent.Register<Item> event) {
-		for(RegistryObject<Block> ro : FRBlocks.BLOCKS.getEntries()) {
+		for (RegistryObject<Block> ro : FRBlocks.BLOCKS.getEntries()) {
 			Block block = ro.get();
 
-			if(block != FRBlocks.WINTERBERRY_BUSH.get() && !(block instanceof SignBlock) && block != FRBlocks.FROSTWOOD_DOOR.get())
+			if (block != FRBlocks.WINTERBERRY_BUSH.get() && !(block instanceof SignBlock) && block != FRBlocks.FROSTWOOD_DOOR.get())
 				event.getRegistry().register(new BlockItem(block, new Item.Properties().tab(FrozenRetreat.TAB)).setRegistryName(block.getRegistryName()));
 		}
 	}

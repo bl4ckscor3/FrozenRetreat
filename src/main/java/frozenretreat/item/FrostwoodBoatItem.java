@@ -39,7 +39,7 @@ public class FrostwoodBoatItem extends Item {
 			if (!entities.isEmpty()) {
 				Vec3 eyePosition = player.getEyePosition();
 
-				for(Entity entity : entities) {
+				for (Entity entity : entities) {
 					AABB boundingBox = entity.getBoundingBox().inflate(entity.getPickRadius());
 
 					if (boundingBox.contains(eyePosition))

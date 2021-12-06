@@ -30,8 +30,7 @@ public class FRBiomes {
 
 	public static final RegistryObject<Biome> BIG_FROZEN_LAKES = registerBiome("unnamed_winter_biome", () -> unnamedWinterBiome(), Type.COLD, Type.SNOWY, Type.OVERWORLD);
 
-	private static RegistryObject<Biome> registerBiome(String name, Supplier<Biome> biome, Type... types)
-	{
+	private static RegistryObject<Biome> registerBiome(String name, Supplier<Biome> biome, Type... types) {
 		ResourceLocation biomeLocation = new ResourceLocation(FrozenRetreat.MODID, name);
 		ResourceKey<Biome> biomeKey = ResourceKey.create(Registry.BIOME_REGISTRY, biomeLocation);
 

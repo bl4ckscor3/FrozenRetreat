@@ -13,7 +13,7 @@ public class WinterberriesItem extends ItemNameBlockItem {
 	@Override
 	public InteractionResult useOn(UseOnContext ctx) {
 		//makes eating berries take precedence over placing them if the player is sneaking
-		if(ctx.getPlayer().isShiftKeyDown()) {
+		if (ctx.getPlayer().isShiftKeyDown()) {
 			InteractionResult eatResult = use(ctx.getLevel(), ctx.getPlayer(), ctx.getHand()).getResult();
 
 			return eatResult == InteractionResult.CONSUME ? InteractionResult.CONSUME_PARTIAL : super.useOn(ctx);

@@ -21,8 +21,8 @@ public class ItemModelGenerator extends ItemModelProvider {
 
 	@Override
 	protected void registerModels() {
-		for(RegistryObject<Block> ro : FRBlocks.BLOCKS.getEntries()) {
-			if(ro.get().asItem() instanceof BlockItem blockItem && blockItem != FRItems.WINTERBERRIES.get())
+		for (RegistryObject<Block> ro : FRBlocks.BLOCKS.getEntries()) {
+			if (ro.get().asItem() instanceof BlockItem blockItem && blockItem != FRItems.WINTERBERRIES.get())
 				simpleParent(blockItem);
 		}
 

@@ -21,7 +21,7 @@ public class StrippableFrostwoodBlock extends RotatedPillarBlock {
 
 	@Override
 	public BlockState getToolModifiedState(BlockState state, Level level, BlockPos pos, Player player, ItemStack stack, ToolAction toolAction) {
-		if(stack.canPerformAction(toolAction) && ToolActions.AXE_STRIP.equals(toolAction))
+		if (stack.canPerformAction(toolAction) && ToolActions.AXE_STRIP.equals(toolAction))
 			return strippedBlock.get().defaultBlockState().setValue(AXIS, state.getValue(AXIS));
 
 		return null;
