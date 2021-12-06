@@ -1,6 +1,5 @@
 package frozenretreat;
 
-import frozenretreat.registration.FRBiomes;
 import frozenretreat.registration.FRBlockEntityTypes;
 import frozenretreat.registration.FRBlocks;
 import frozenretreat.registration.FRItems;

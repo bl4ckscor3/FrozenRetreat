@@ -1,7 +1,10 @@
 package frozenretreat;
 
 import frozenretreat.registration.FRBlockEntityTypes;
+import frozenretreat.registration.FRBlocks;
 import frozenretreat.registration.FRWoodTypes;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraftforge.api.distmarker.Dist;
@@ -16,6 +19,7 @@ public class ClientSetup {
 	@SubscribeEvent
 	public static void onFMLClientSetup(FMLClientSetupEvent event) {
 		event.enqueueWork(() -> Sheets.addWoodType(FRWoodTypes.FROSTWOOD));
+		ItemBlockRenderTypes.setRenderLayer(FRBlocks.WINTERBERRY_BUSH.get(), RenderType.cutout());
 	}
 
 	@SubscribeEvent
