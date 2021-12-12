@@ -1,5 +1,7 @@
 package frozenretreat.registration;
 
+import java.util.function.Function;
+
 import frozenretreat.FrozenRetreat;
 import frozenretreat.block.StandingFrostwoodSignBlock;
 import frozenretreat.block.StrippableFrostwoodBlock;
@@ -19,6 +21,7 @@ import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.WoodButtonBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.level.material.MaterialColor;
 import net.minecraftforge.registries.DeferredRegister;
@@ -37,23 +40,13 @@ public class FRBlocks {
 			.sound(SoundType.SWEET_BERRY_BUSH)));
 	public static final RegistryObject<Block> FROSTWOOD_PLANKS = BLOCKS.register("frostwood_planks", () -> new Block(frostwoodTypeProperties()));
 	public static final RegistryObject<RotatedPillarBlock> FROSTWOOD_LOG = BLOCKS.register("frostwood_log", () -> new StrippableFrostwoodBlock(
-			Properties.of(Material.WOOD, state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MaterialColor.COLOR_BLACK : MaterialColor.COLOR_BLACK)
-			.strength(2.0F)
-			.sound(SoundType.WOOD),
+			frostwoodTypeProperties(state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? MaterialColor.COLOR_BLACK : MaterialColor.COLOR_BLACK, 2.0F, 2.0F),
 			getStrippedFrostwoodLog()));
-	public static final RegistryObject<RotatedPillarBlock> STRIPPED_FROSTWOOD_LOG = BLOCKS.register("stripped_frostwood_log", () -> new RotatedPillarBlock(
-			Properties.of(Material.WOOD, MaterialColor.COLOR_BLACK)
-			.strength(2.0F)
-			.sound(SoundType.WOOD)));
+	public static final RegistryObject<RotatedPillarBlock> STRIPPED_FROSTWOOD_LOG = BLOCKS.register("stripped_frostwood_log", () -> new RotatedPillarBlock(frostwoodTypeProperties(MaterialColor.COLOR_BLACK, 2.0F, 2.0F)));
 	public static final RegistryObject<RotatedPillarBlock> FROSTWOOD = BLOCKS.register("frostwood", () -> new StrippableFrostwoodBlock(
-			Properties.of(Material.WOOD, MaterialColor.WOOD)
-			.strength(2.0F)
-			.sound(SoundType.WOOD),
+			frostwoodTypeProperties(MaterialColor.WOOD, 2.0F, 2.0F),
 			getStrippedFrostwood()));
-	public static final RegistryObject<RotatedPillarBlock> STRIPPED_FROSTWOOD = BLOCKS.register("stripped_frostwood", () -> new RotatedPillarBlock(
-			Properties.of(Material.WOOD, MaterialColor.WOOD)
-			.strength(2.0F)
-			.sound(SoundType.WOOD)));
+	public static final RegistryObject<RotatedPillarBlock> STRIPPED_FROSTWOOD = BLOCKS.register("stripped_frostwood", () -> new RotatedPillarBlock(frostwoodTypeProperties(MaterialColor.WOOD, 2.0F, 2.0F)));
 	public static final RegistryObject<SlabBlock> FROSTWOOD_SLAB = BLOCKS.register("frostwood_slab", () -> new SlabBlock(frostwoodTypeProperties()));
 	public static final RegistryObject<StairBlock> FROSTWOOD_STAIRS = BLOCKS.register("frostwood_stairs", () -> new StairBlock(() -> FROSTWOOD_PLANKS.get().defaultBlockState(), frostwoodTypeProperties()));
 	public static final RegistryObject<FenceBlock> FROSTWOOD_FENCE = BLOCKS.register("frostwood_fence", () -> new FenceBlock(frostwoodTypeProperties()));
@@ -90,7 +83,15 @@ public class FRBlocks {
 	}
 
 	private static Properties frostwoodTypeProperties(float destroyTime, float explosionResistance) {
-		return Properties.of(Material.WOOD, FROSTWOOD_PLANKS_MATERIAL_COLOR).strength(destroyTime, explosionResistance).sound(SoundType.WOOD);
+		return frostwoodTypeProperties(FROSTWOOD_PLANKS_MATERIAL_COLOR, destroyTime, explosionResistance);
+	}
+
+	private static Properties frostwoodTypeProperties(MaterialColor color, float destroyTime, float explosionResistance) {
+		return frostwoodTypeProperties(state -> color, destroyTime, explosionResistance);
+	}
+
+	private static Properties frostwoodTypeProperties(Function<BlockState, MaterialColor> colorFunction, float destroyTime, float explosionResistance) {
+		return Properties.of(Material.WOOD, colorFunction).strength(destroyTime, explosionResistance).sound(SoundType.WOOD).friction(0.7F).speedFactor(1.1F);
 	}
 
 	private static RegistryObject<RotatedPillarBlock> getStrippedFrostwoodLog() {
