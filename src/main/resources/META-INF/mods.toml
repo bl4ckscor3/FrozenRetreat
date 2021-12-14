@@ -1,5 +1,5 @@
 modLoader="javafml"
-loaderVersion="[38,)"
+loaderVersion="[39,)"
 license="MIT License https://github.com/bl4ckscor3/FrozenRetreat/blob/1.18/LICENSE"
 issueTrackerURL="https://github.com/bl4ckscor3/FrozenRetreat/issues"
 
@@ -14,13 +14,13 @@ issueTrackerURL="https://github.com/bl4ckscor3/FrozenRetreat/issues"
 [[dependencies.frozenretreat]]
 	modId="forge"
 	mandatory=true
-	versionRange="[38,)"
+	versionRange="[39,)"
 	ordering="NONE"
 	side="BOTH"
 
 [[dependencies.frozenretreat]]
 	modId="minecraft"
 	mandatory=true
-	versionRange="[1.18,1.19)"
+	versionRange="[1.18.1,1.19)"
 	ordering="NONE"
 	side="BOTH"
