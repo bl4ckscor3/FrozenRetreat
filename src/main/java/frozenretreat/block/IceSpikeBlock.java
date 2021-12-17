@@ -15,13 +15,10 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.FluidTags;
-import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntitySelector;
 import net.minecraft.world.entity.item.FallingBlockEntity;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.ThrownTrident;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -73,17 +70,6 @@ public class IceSpikeBlock extends Block implements Fallable, SimpleWaterloggedB
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		builder.add(TIP_DIRECTION, THICKNESS, WATERLOGGED);
-	}
-
-	@Override
-	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
-		if(!level.isClientSide)
-		{
-			System.out.println("---");
-			System.out.println(canMelt(level, pos, state));
-			System.out.println(canTipGrow(state, (ServerLevel)level, pos));
-		}
-		return InteractionResult.SUCCESS;
 	}
 
 	@Override
@@ -357,30 +343,6 @@ public class IceSpikeBlock extends Block implements Fallable, SimpleWaterloggedB
 
 				if (canDrip(level, tipPos, tipState) && canTipGrow(tipState, level, tipPos))
 					grow(level, tipPos, Direction.DOWN);
-			}
-		}
-	}
-
-	public void growStalagmiteBelow(ServerLevel level, BlockPos pos) {
-		BlockPos.MutableBlockPos mutablePos = pos.mutable();
-
-		for(int i = 0; i < 10; ++i) {
-			BlockState stateToCheck;
-
-			mutablePos.move(Direction.DOWN);
-			stateToCheck = level.getBlockState(mutablePos);
-
-			if (!stateToCheck.getFluidState().isEmpty())
-				return;
-
-			if (isUnmergedTipWithDirection(stateToCheck, Direction.UP) && canTipGrow(stateToCheck, level, mutablePos)) {
-				grow(level, mutablePos, Direction.UP);
-				return;
-			}
-
-			if (isValidIceSpikePlacement(level, mutablePos, Direction.UP) && !level.isWaterAt(mutablePos.below())) {
-				grow(level, mutablePos.below(), Direction.UP);
-				return;
 			}
 		}
 	}
