@@ -11,6 +11,9 @@ import frozenretreat.FrozenRetreat;
 import frozenretreat.block.WinterberryBushBlock;
 import frozenretreat.registration.FRBlocks;
 import frozenretreat.registration.FRItems;
+import net.minecraft.advancements.critereon.EnchantmentPredicate;
+import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.MinMaxBounds;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.DataProvider;
@@ -29,6 +32,7 @@ import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.predicates.ExplosionCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
@@ -55,6 +59,12 @@ public class LootTableGenerator implements DataProvider {
 
 		lootTables.put(frostwoodDoor.getLootTable(), BlockLoot.createDoorTable(frostwoodDoor));
 		lootTables.put(FRBlocks.FROSTWOOD_SIGN.get().getLootTable(), createStandardBlockLootTable(FRItems.FROSTWOOD_SIGN.get()));
+		lootTables.put(FRBlocks.ICE_SPIKE.get().getLootTable(), LootTable.lootTable()
+				.withPool(LootPool.lootPool()
+						.when(MatchTool.toolMatches(ItemPredicate.Builder.item()
+								.hasEnchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.Ints.atLeast(1)))))
+						.setRolls(ConstantValue.exactly(1.0F))
+						.add(LootItem.lootTableItem(FRBlocks.ICE_SPIKE.get()))));
 		lootTables.put(winterberryBush.getLootTable(), LootTable.lootTable()
 				.withPool(LootPool.lootPool()
 						.when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(winterberryBush)

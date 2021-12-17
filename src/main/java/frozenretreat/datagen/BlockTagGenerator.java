@@ -37,6 +37,7 @@ public class BlockTagGenerator extends BlockTagsProvider {
 				FRBlocks.FROSTWOOD_DOOR.get(),
 				FRBlocks.FROSTWOOD_TRAPDOOR.get(),
 				FRBlocks.FROSTWOOD_FENCE_GATE.get());
+		tag(BlockTags.MINEABLE_WITH_PICKAXE).add(FRBlocks.ICE_SPIKE.get());
 		tag(BlockTags.PLANKS).add(FRBlocks.FROSTWOOD_PLANKS.get());
 		tag(BlockTags.PRESSURE_PLATES).add(FRBlocks.FROSTWOOD_PRESSURE_PLATE.get());
 		tag(BlockTags.SIGNS).add(

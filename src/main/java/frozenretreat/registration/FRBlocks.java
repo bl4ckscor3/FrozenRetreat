@@ -3,6 +3,7 @@ package frozenretreat.registration;
 import java.util.function.Function;
 
 import frozenretreat.FrozenRetreat;
+import frozenretreat.block.IceSpikeBlock;
 import frozenretreat.block.StandingFrostwoodSignBlock;
 import frozenretreat.block.StrippableFrostwoodBlock;
 import frozenretreat.block.WallFrostwoodSignBlock;
@@ -73,6 +74,13 @@ public class FRBlocks {
 			.noOcclusion()
 			.isValidSpawn(($0, $1, $2, $3) -> false)));
 	public static final RegistryObject<FenceGateBlock> FROSTWOOD_FENCE_GATE = BLOCKS.register("frostwood_fence_gate", () -> new FenceGateBlock(frostwoodTypeProperties()));
+	public static final RegistryObject<IceSpikeBlock> ICE_SPIKE = BLOCKS.register("ice_spike", () -> new IceSpikeBlock(
+			Properties.of(Material.GLASS, MaterialColor.COLOR_LIGHT_BLUE)
+			.noOcclusion()
+			.randomTicks()
+			.sound(SoundType.GLASS)
+			.strength(1.5F, 3.0F)
+			.dynamicShape()));
 
 	private static Properties frostwoodTypeProperties() {
 		return frostwoodTypeProperties(2.0F, 3.0F);

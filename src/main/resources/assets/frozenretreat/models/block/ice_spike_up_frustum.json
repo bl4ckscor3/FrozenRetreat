@@ -1,0 +1,6 @@
+{
+  "parent": "frozenretreat:block/ice_spike",
+  "textures": {
+    "cross": "frozenretreat:block/ice_spike_up_frustum"
+  }
+}
